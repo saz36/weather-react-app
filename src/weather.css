@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather {
+  margin-top: 50px;
+  margin-left: 40px;
+  padding-left: 20px;
+  border: 1px solid #dadce0;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+  color: #0c66eb;
+  font-size: 52px;
+}
+
+.date,
+.result {
+  text-align: center;
+  font-size: 23px;
+  color: black;
+  padding-left: 20px;
+}
+li.sunrise,
+.sunset,
+.Humidity,
+.wind {
+  list-style: none;
+  color: #70757a;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 24px;
+}
+img {
+  height: 65px;
+  float: left;
+  margin-right: 10px;
+}
+.temp {
+  font-size: 65px;
+  line-height: 65px;
+  font-weight: 400;
+}
+.unit {
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  top: -34px;
+}
+ul.sun {
+  margin: 0;
+  padding: 0;
+}
+ul.info {
+  margin: 0;
+  padding-left: 20px;
+}
