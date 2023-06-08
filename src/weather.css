@@ -22,7 +22,7 @@ h1 {
   color: black;
   padding-left: 20px;
 }
-li.sunrise,
+.sunrise,
 .sunset,
 .Humidity,
 .wind {
@@ -35,18 +35,19 @@ li.sunrise,
 img {
   height: 65px;
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .temp {
-  font-size: 65px;
-  line-height: 65px;
+  font-size: 60px;
+  line-height: 60px;
   font-weight: 400;
 }
 .unit {
   font-size: 16px;
   font-weight: 500;
   position: relative;
-  top: -34px;
+  top: -55px;
+  right: -65px;
 }
 ul.sun {
   margin: 0;
