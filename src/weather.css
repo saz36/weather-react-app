@@ -32,13 +32,16 @@ h1 {
   font-size: 16px;
   line-height: 24px;
 }
-img {
-  height: 65px;
+.weather canvas {
   float: left;
   margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .temp {
-  font-size: 60px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 58px;
   line-height: 60px;
   font-weight: 400;
 }
