@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import "./weather.css";
 import axios from "axios";
-export default function Weather() {
+import FormatDate from "./formatDate";
+export default function Weather(props) {
   const [display, setDisplay] = useState(false);
   const [weatherData, setWeatherData] = useState({});
 
   function handleResponse(response) {
-    console.log(response.data.main);
     setWeatherData({
+      date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
-      wind:response.data.wind.speed,
+      wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       city: response.data.name,
     });
@@ -48,7 +49,9 @@ export default function Weather() {
             <h3 className="result">{weatherData.city}</h3>
           </div>
           <div className="col-5 ">
-            <h3 className="date">Date:</h3>
+            <div className="date">
+              <FormatDate date={weatherData.date} />
+            </div>
           </div>
         </div>
         <div className="row my-3">
@@ -73,8 +76,11 @@ export default function Weather() {
                 className="float-left"
               />
               <div className="float-left">
-                <span className="temp"> {Math.round(weatherData.temp)}</span>
-                <span className="unit"> °C</span>
+                <span className="temp">
+                  {" "}
+                  {Math.round(weatherData.temp)}
+                  <span className="unit">°C </span>
+                </span>
               </div>
             </div>
             <div className="description"></div>
@@ -91,7 +97,7 @@ export default function Weather() {
   } else {
     const apiKey = "b95f179627c8dd37f41e1be6e3250e19";
     let units = "metric";
-    let city = "Bristol";
+    let city = "jamaica";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
 
