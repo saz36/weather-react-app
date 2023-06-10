@@ -2,6 +2,7 @@ import React from "react";
 import FormatDate from "./formatDate";
 import WeatherTemp from "./weatherTemp";
 import WeatherIcon from "./weatherIcon";
+
 export default function weatherInfo(props) {
   return (
     <div className="weatherInfo">
@@ -40,8 +41,8 @@ export default function weatherInfo(props) {
         </div>
         <div className="col-4">
           <ul className="sun">
-            <li className="sunrise">Sunrise:</li>
-            <li className="sunset">Sunset: 20.00</li>
+            <li className="sunrise">Sunrise:{props.data.sunrise}</li>
+            <li className="sunset">Sunset: {props.data.sunset}</li>
           </ul>
         </div>
       </div>

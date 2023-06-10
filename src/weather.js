@@ -16,6 +16,8 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       city: response.data.name,
       icon: response.data.weather[0].icon,
+      sunrise: response.data.sys.sunrise,
+      sunset: response.data.sys.sunset,
     });
 
     setDisplay(true);
@@ -32,6 +34,18 @@ export default function Weather(props) {
   }
   function handleSearch(event) {
     setCity(event.target.value);
+  }
+  function positionLocate(position) {
+    console.log(position);
+    let units = "metric";
+    let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}`;
+
+    axios.get(`${url}&appid=${apiKey}`).then(handleResponse);
+  }
+  function location(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(positionLocate);
   }
   if (display) {
     return (
@@ -57,7 +71,11 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-2">
-              <input type ="button" value="location"className="btn btn-primary "
+              <input
+                type="button"
+                value="location"
+                className="btn btn-primary "
+                onClick = {location}
               />
             </div>
           </div>
