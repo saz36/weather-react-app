@@ -57,7 +57,8 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-2">
-              <button className="btn btn-primary ">location</button>
+              <input type ="button" value="location"className="btn btn-primary "
+              />
             </div>
           </div>
         </form>
