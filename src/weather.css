@@ -10,6 +10,7 @@ body {
   border-radius: 5px;
 }
 h1 {
+  margin-top: 20px;
   text-align: center;
   color: #0c66eb;
   font-size: 52px;
@@ -40,17 +41,21 @@ h1 {
 }
 .temp {
   margin-top: 5px;
-  margin-left: 5px;
-  font-size: 58px;
+  margin-left: 0px;
+  font-size: 50px;
   line-height: 60px;
   font-weight: 400;
 }
+.weatherTemp a{text-decoration: none;}
+.weatherTemp{margin-right: 10px;
+text-decoration: none;}
 .unit {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   position: relative;
   top: -30px;
-  right: -6px;
+  right: -5px;
+  text-decoration: none;
 }
 ul.sun {
   margin: 0;
