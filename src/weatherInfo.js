@@ -2,7 +2,9 @@ import React from "react";
 import FormatDate from "./formatDate";
 import WeatherTemp from "./weatherTemp";
 import WeatherIcon from "./weatherIcon";
-
+import Sunrise from "./sunrise";
+import Sunset from "./sunset";
+import "./weatherinfo.css"
 export default function weatherInfo(props) {
   return (
     <div className="weatherInfo">
@@ -40,10 +42,12 @@ export default function weatherInfo(props) {
           <div className="description">{props.data.description}</div>
         </div>
         <div className="col-4">
-          <ul className="sun">
-            <li className="sunrise">Sunrise:{props.data.sunrise}</li>
-            <li className="sunset">Sunset: {props.data.sunset}</li>
-          </ul>
+          <div className="solar">
+            <Sunrise sun={props.data.sunrise} />
+          </div>
+          <div className="solar-set">
+            <Sunset set={props.data.sunset} />
+          </div>
         </div>
       </div>
     </div>

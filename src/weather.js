@@ -8,7 +8,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
+    console.log(response.data.sys.sunrise);
     setWeatherData({
       date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
@@ -17,7 +17,7 @@ export default function Weather(props) {
       city: response.data.name,
       icon: response.data.weather[0].icon,
       sunrise: response.data.sys.sunrise,
-      sunset: response.data.sys.sunset,
+      sunset:  response.data.sys.sunset,
     });
 
     setDisplay(true);
@@ -75,7 +75,7 @@ export default function Weather(props) {
                 type="button"
                 value="location"
                 className="btn btn-primary "
-                onClick = {location}
+                onClick={location}
               />
             </div>
           </div>
