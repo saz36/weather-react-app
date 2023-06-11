@@ -17,7 +17,7 @@ export default function Weather(props) {
       city: response.data.name,
       icon: response.data.weather[0].icon,
       sunrise: response.data.sys.sunrise,
-      sunset:  response.data.sys.sunset,
+      sunset: response.data.sys.sunset,
     });
 
     setDisplay(true);
