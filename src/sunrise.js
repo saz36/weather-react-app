@@ -13,7 +13,7 @@ export default function sunrise(props) {
   return (
     <ul className="sun mt-1 px-0">
       <li className="sunrise">
-        sunrise:{hours}:{minutes}
+        Sunrise:{" "}{hours}:{minutes}
       </li>
     </ul>
   );

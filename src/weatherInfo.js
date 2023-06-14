@@ -4,7 +4,8 @@ import WeatherTemp from "./weatherTemp";
 import WeatherIcon from "./weatherIcon";
 import Sunrise from "./sunrise";
 import Sunset from "./sunset";
-import "./weatherinfo.css"
+
+import "./weatherinfo.css";
 export default function weatherInfo(props) {
   return (
     <div className="weatherInfo">
@@ -35,7 +36,7 @@ export default function weatherInfo(props) {
         <div className="col-4 px-0">
           <div className="clearfix">
             <div className="float-left">
-              <WeatherIcon code={props.data.icon} />
+              <WeatherIcon code={props.data.icon} size={60}/>
             </div>
             <WeatherTemp celcius={props.data.temp} />
           </div>

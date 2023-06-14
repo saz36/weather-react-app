@@ -14,7 +14,7 @@ export default function sunset(props) {
   return (
     <ul className="set px-0 mb-3">
       <li className="sunset">
-        sunset:{hours}:{minutes}
+        Sunset:{"   "}{hours}:{minutes}
       </li>
     </ul>
   );
