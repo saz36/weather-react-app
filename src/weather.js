@@ -50,6 +50,7 @@ export default function Weather(props) {
     navigator.geolocation.getCurrentPosition(positionLocate);
   }
   if (display) {
+    
     return (
       <div className="weather">
         <h1>Weather App</h1>

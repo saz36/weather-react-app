@@ -13,7 +13,7 @@ export default function ForecastWeek(props) {
   function day() {
     let date = new Date(props.data.dt * 1000);
     let day = date.getDay();
-    let week = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+    let week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     return week[day];
   }
   return (
