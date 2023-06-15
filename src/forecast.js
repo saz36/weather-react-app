@@ -1,59 +1,36 @@
-import React from "react";
-import WeatherIcon from "./weatherIcon";
+import React, {useState} from "react";
+
 import "./forecast.css";
-export default function forecast() {
+import ForecastWeek from "./forecastWeek";
+
+import axios from "axios";
+export default function Forecast(props) {
+  let [display, setDisplay]= useState(false);
+  let [forecastDay, setForecastDay] = useState(null);
+  function handleResponse(response) {
+    console.log(response.data);
+  setForecastDay(response.data.daily);
+  setDisplay(true);
+  }
+  
+if(display){
+  console.log(forecastDay);
   return (
     <div className="forecast">
       <div className="row">
         <div className="col">
-          <div className="forecast-day">Fri</div>
-
-          <div className="forecast-temps">
-            <span className="max-temp">20°c</span>
-            <span className="min-temp">3°c</span>
-          </div>
-
-          <div className="forecast-icon">
-            <WeatherIcon code="10d" size={36} />
-          </div>
-        </div>
-        <div className="col">
-          <div className="forecast-day">Fri</div>
-
-          <div className="forecast-temps">
-            <span className="max-temp">20°c</span>
-            <span className="min-temp">3°c</span>
-          </div>
-
-          <div className="forecast-icon">
-            <WeatherIcon code="10d" size={36} />
-          </div>
-        </div>
-        <div className="col">
-          <div className="forecast-day">Fri</div>
-
-          <div className="forecast-temps">
-            <span className="max-temp">20°c</span>
-            <span className="min-temp">3°c</span>
-          </div>
-
-          <div className="forecast-icon">
-            <WeatherIcon code="10d" size={36} />
-          </div>
-        </div>
-        <div className="col">
-          <div className="forecast-day">Fri</div>
-
-          <div className="forecast-temps">
-            <span className="max-temp">20°c</span>
-            <span className="min-temp">3°c</span>
-          </div>
-
-          <div className="forecast-icon">
-            <WeatherIcon code="10d" size={36} />
-          </div>
+          <ForecastWeek data={forecastDay[0]} />
         </div>
       </div>
     </div>
   );
+}else{
+  let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
+  let lat = props.coordinates.lat;
+  let lon = props.coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+
+return null;
+}
 }
