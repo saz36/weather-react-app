@@ -7,18 +7,16 @@ import axios from "axios";
 export default function Forecast(props) {
   let [display, setDisplay] = useState(false);
   let [forecastDay, setForecastDay] = useState(null);
-  
+
   useEffect(() => {
     setDisplay(false);
   }, [props.coordinates]);
-
 
   function handleResponse(response) {
     setForecastDay(response.data.daily);
     setDisplay(true);
   }
   if (display) {
-    console.log(forecastDay);
     return (
       <div className="forecast">
         <div className="row">
@@ -29,9 +27,9 @@ export default function Forecast(props) {
                   <ForecastWeek data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
-            else
-            {return null;}
           })}
         </div>
       </div>

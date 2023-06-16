@@ -37,7 +37,6 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
   function positionLocate(position) {
-    console.log(position);
     let units = "metric";
     let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}`;
