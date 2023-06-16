@@ -9,7 +9,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
@@ -50,7 +49,6 @@ export default function Weather(props) {
     navigator.geolocation.getCurrentPosition(positionLocate);
   }
   if (display) {
-    
     return (
       <div className="weather">
         <h1>Weather App</h1>
@@ -84,7 +82,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <Forecast  coordinates={weatherData.coordinates}/>
+        <Forecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
