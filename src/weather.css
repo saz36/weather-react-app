@@ -35,7 +35,7 @@ h1 {
 }
 .weather canvas {
   float: left;
-  margin-right: 5px;
+
   margin-top: 5px;
 
   margin-bottom: 5px;
@@ -43,7 +43,7 @@ h1 {
 .temp {
   margin-top: 5px;
   margin-left: 4px;
-  font-size: 48px;
+  font-size: 43px;
   line-height: 60px;
   font-weight: 400;
 }
@@ -51,11 +51,11 @@ h1 {
   text-decoration: none;
 }
 .weatherTemp {
-  margin-right: 10px;
+  margin-right: 6px;
   text-decoration: none;
 }
 .unit {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   position: relative;
   top: -30px;
