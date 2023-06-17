@@ -26,7 +26,6 @@ export default function WeatherTemp(props) {
       </div>
     );
   } else {
-    
     return (
       <div className="weatherTemp">
         <span className="temp"> {Math.round(fahren())}</span>

@@ -50,7 +50,7 @@ export default function Weather(props) {
   if (display) {
     return (
       <div className="weather">
-        <h1>Weather App</h1>
+        <h1>Weather </h1>
         <form onSubmit={handleSubmit}>
           <div className="row my-4">
             <div className="col-7 ">
